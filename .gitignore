@@ -1,3 +1,12 @@
+# Directories
+lp
+test1images
+testHTML
+testOCR
+pdfs_to_imgs 
+reproducibility
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
