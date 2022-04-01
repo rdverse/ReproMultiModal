@@ -5,7 +5,7 @@ testHTML
 testOCR
 pdfs_to_imgs 
 reproducibility
-
+test1.pdfs_to_imgssquare.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
