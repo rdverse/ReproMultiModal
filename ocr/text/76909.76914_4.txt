@@ -1,0 +1,37 @@
+Algorithm 677: C’ Surface interpolation + 369
+
+Fig. 3. Perspective view of the 33 (x;, ¥, 2) points ({12]
+
+Table I).
+
+2So>,
+o>
+So
+
+NO TKS
+
+SO eS
+Ss
+SEER
+COLOR SL,
+KSOGBSSS
+AAS EY
+COSA INO
+
+ROR
+TS
+ARN
+
+ 
+
+Fig. 4. (a) ACM 624 with G.D.E,; (b) M.T.F. with p = 50; (c) M.T.F. with
+p= 300.
+
+(slightly different from that of [9] to simulate more rapidly varying data) obtained
+using the proposed algorithm with different tension parameter values (Figure 2
+(a and b)) and the ACM Algorithm 624 (Figure 2 (c and d)). Table I also gives
+the mean and maximum absolute interpolation errors on the 1600 grid points of
+a40 x 40 uniform mesh on domain D.
+
+ACM Transactions on Mathematical Software, Vol. 15, No. 4, December 1989.
+

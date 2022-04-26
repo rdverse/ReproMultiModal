@@ -1,0 +1,70 @@
+Algorithm 677: C’ Surface Interpolation + 367
+
+the values of the derivatives by assuming a cubic variation along each edge of
+the triangulation and minimizing the integral over all edges in the triangulation
+of the second derivative’s square.
+
+Of all these methods, Nielson’s produces the best results and provides the most
+appropriate reconstruction. But this method fails, too, when the data vary very
+rapidly and, moreover, it does not allow any influence on the shape of the surface
+by means of an input parameter.
+
+The results of Nielson’s method have nevertheless suggested to us the possi-
+bility of using a generalization of this method in our algorithm, obtained by
+introducing a tension term in the functional to be minimized. More precisely, let
+l represent the edge in the triangulation with endpoints P; and P,, and let I; be
+a list of the indices representing the edges of the triangulation. We then define
+T = Ujjcr,l,; as the union of all the edges of the triangulation and h,;(t) as a
+cubic Hermite polynomial defined on l;;, which interpolates the given values /;
+and f; and certain unknown values f;, f; at points P;, Pj.
+
+In terms of this notation we define the set of cubic Hermite networks as
+
+He{T] = {¢; ¢ = Flr with F € C'[D] and ¢ |, = hilt) i,j © Ir},
+
+that is, the set of all C' functions which, restricted to 1;; edges ij © Ip are cubic
+Hermite polynomials interpolating the given function values.
+
+In this set an element ¢ is then chosen by solving, with respect to the unknown
+partial derivative values, the following minimum problem:
+
+Min Ip(¢)
+
+~eHe[T}
+
+eel 2 f se}
+[sz] ats +P hy 5s, ay
+
+where di,; is the element of arc length along |;; and p = 0 is a tension parameter.
+
+The choice of the tension parameter value represents the interactive tool by
+means of which the user is offered the possibility of acting on the shape of the
+reconstructed surface.
+
+As shown in the following examples, this value has a great influence on the
+results of the interpolation problem.
+
+In Figures 1 through 8 these examples explain the utility of introducing the
+new tension term in the functional to be minimized in order to evaluate the
+partial derivative values (henceforth, this method is indicated as M.T.F. for
+Minimum Tension Functional) and to compare the results thus obtained with
+those given by the software available today (ACM Algorithm 624 [13] where
+G.D.E. stands for Global Derivative Estimates and L.D.E. for Local Derivative
+Estimates).
+
+First we considered the reconstruction of n = 26 point values (see [9] p. 173,
+Figure 3) of the function
+
+f(x, ¥) = 8/3.14*EXP(—8(x*x + y*y))
+ACM Transactions on Mathematical Software, Vol. 15, No. 4, December 1989.
+
+with
+
+J
+
+fis
+
+EY) = > {
+
+ij€Ip
+

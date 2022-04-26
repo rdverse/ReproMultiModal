@@ -1,0 +1,31 @@
+370s L. Bacchelli Montefusco and G. Casciola
+
+Fig. 5. Perspective view of the 23 (x;, y;, 2;) paints ({12]
+Table III).
+
+ 
+
+Fig. 6. (a) ACM 624 with G.D.E,; (b) M.T.F. with
+p= 100.
+
+ 
+
+As can easily be seen, the increase of the tension parameter does not always
+give better mean and maximum absolute errors because we prefer to follow the
+data rather than an unknown function whose evaluations are not sufficiently
+representative.
+
+For this reason we have, in the following, considered only really rapidly varying
+data sets for which the effect of increasing tension parameter values might be
+beneficial. Two are taken from the literature (see [12] Tables 1 and 3) and the
+other, given in Table II, is an experimental data set.
+
+The given examples show that the effects of the tension parameter may be
+predictable and desirable.
+
+Moreover, our final example (Figure 8) shows the absolute need for an inter-
+active tool that allows the user to control the shape of the reconstructed surface
+in order to avoid meaningless results.
+
+ACM Transactions on Mathematical Software, Vol. 15, No. 4, December 1989.
+

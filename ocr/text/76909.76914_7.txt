@@ -1,0 +1,63 @@
+372 +L. Bacchelli Montefusco and G. Casciola
+
+ 
+
+ 
+
+Table I
+Mean interpolation Maximum interpolation
+Method errors errors
+
+ACM-624 L.D.E. 0.14340160 0.6808414
+ACM-624 G.D.E. 0.05500746 0.6745130
+M.T-F. p = 0 0.05109753 0.5853364
+M.T.F. p = 10 0.04544656 0.5812947
+M.T.F. p = 20 0.05197870 0.6635371
+M.T.F. p = 50 0.06108003 0.6999445
+
+Table II
+
+x Y Zz xX Y Zz
+
+ 
+
+1.212 0.448 0.000 1.920 0.795 0.000
+1.016 0.737 0.000 1.957 0.592 0.000
+1.661 0.203 0.000 1.754 0.069 0.000
+1.548 0.385 0.855 1.161 0.906 0.000
+1.735 0.044 0.000 1.583 0.941 0.000
+1.029 0.111 0.000 1.252 0.705 0.000
+1.377 0.286 0.511 1.862 0.903 0.000
+1.176 0.597 0.000 1,201 0.024 0.000
+1.749 0.953 0.000 1.452 0.217 0.000
+1.439 0.683 0.674 1.966 0.517 0.000
+1.396 0.752 0.000 1.014 0.492 0.000
+1.053 0.392 0.000 1.385 0.149 0.000
+1.653 0.784 0.000 1.825 0.040 0.000
+1.651 0.636 0.644 1.928 0.759 0.000
+1.759 0.481 0.000 1.069 0.968 0.000
+1.199 0.690 0.000 1.658 0.515 0.770
+1.402 0.388 0.799 1.874 0.488 0.000
+1.744 0.484 0.516 1,122 0.868 0.000
+1.034 0.873 0.000 1.761 0.821 0.000
+1.202 0.671 0.000 1.186 0.400 0.000
+1.012 0.547 0.000 1.110 0.197 0.000
+1.200 0.807 0.000 1.569 0.904 0.000
+1.557 0.123 0.000
+
+The MASUB subroutine is the master subroutine of the package and interfaces
+with the user; it performs smooth bivariate interpolation and estimates the
+interpolant function at prescribed rectangular grid points in the x—y plane; it
+generates a doubly dimensioned array containing these estimated values. The
+remaining seven subroutines are supporting and are called by MASUB according
+to the values of two appropriate input parameters IC and IEX. EXTRP allows
+the user extrapolation outside the convex hull of the point set; it adds some
+exterior points to the point set and estimates the function value at those points
+with the Shepard method (it is called only by IEX = 1). The choice of this
+method has proved to be appropriate for a high percentage of cases; however, if
+users find it not sufficiently accurate for their own data, they can set IEX = 0
+and add, at least, four other data points (x, y, z) at the corners of the rectangular
+domain where the surface has to be reconstructed.
+
+ACM Transactions on Mathematical Software, Vol. 15, No. 4, December 1989.
+

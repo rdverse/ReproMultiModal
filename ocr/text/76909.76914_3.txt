@@ -1,0 +1,45 @@
+368 . L. Bacchelli Montefusco and G. Casciola
+
+Fig. 1. Perspective view of 26 (xi, yi, z:) data points.
+
+ 
+
+       
+
+  
+ 
+     
+    
+ 
+
+     
+ 
+ 
+
+          
+    
+
+ 
+
+  
+
+5, Hl I ay SS BY Hy
+é 4) p< ae
+ANS
+ZN Sr
+ES gor
+
+(a) (b)
+
+0
+ye
+
+ 
+
+{c)
+
+Fig. 2. (a) M.T.F. with p = 0; (b) M.T.F. with p = 20; (c) ACM 624 with
+L.D.E.; (d) ACM 624 with G.D.E.
+
+ACM Transactions on Mathematical Software, Vol. 15, No. 4, December 1989.
+

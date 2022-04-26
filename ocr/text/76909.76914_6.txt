@@ -1,0 +1,36 @@
+371
+
+Algorithm 677: C* Surface Interpolation
+
+Fig. 7. Perspective view of the 45 (x;, y:, 2;) points (Table Il).
+
+   
+
+ 
+
+0; (c) M.T.F. with
+
+)
+
+b
+
+    
+
+(
+
+Fig.8. (a) ACM 624 with G.D.E; (b) M.T-F. with p
+
+200; (d) M.T.F. with p = 500.
+
+p=
+
+3. DESCRIPTION
+
+The package that implements the proposed algorithm and whose structure is
+
+given in Figure 9 consists of nine subprograms, eight subroutines, and a function,
+
+all written in ANSI Standard FORTRAN.
+
+ACM Transactions on Mathematical Software, Vol. 15, No. 4, December 1989.
+

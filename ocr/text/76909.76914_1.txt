@@ -1,0 +1,59 @@
+366 +L. Bacchelli Montefusco and G. Casciola
+
+defined on a triangulation of the convex hull of the point set. These methods
+work quite well on relatively smooth data sets, especially if they are obtained as
+randomly generated point evaluations of some test functions, but they fail to
+yield acceptable results when steep gradients are implied by the data. In this
+case, in fact, the reconstructed surface exhibits unwanted oscillations near steep
+gradients.
+
+With the proposed algorithm we give the user the means for controlling
+behavior of the interpolant surface, while still using a triangle-based method that
+provides a C? global reconstructed function.
+
+Particular attention has been paid to the computational complexity and the
+numerical stability of the proposed method; we have thus been persuaded to
+exclude the use of a type of bivariate analog of the spline under tension proposed
+in [12] since it makes use of basic functions that are mostly exponentials with
+consequent problems of numerical stability and high computational complexity.
+
+2. THE ALGORITHM
+
+As already mentioned, the proposed algorithm calculated a C‘ interpolant that is
+defined in piecewise fashion over triangles. That means it consists of three
+different steps:
+
+(1) the domain D of the data is triangulated using the points P;,i=1,..., Nas
+the vertices of the triangulation.
+
+(2) acurve network is constructed interpolating the values f, and approximating
+the first-order partial derivatives on the subset consisting of the union of all
+edges of the triangulation.
+
+(3) aC’ nine-parameter discretized version of a transfinite interpolation scheme
+is used in order to construct the global interpolant.
+
+We have decided, after careful analysis [3] of the known methods [5, 7~10], to
+utilize, respectively, for steps (1) and (3), the max-min angle optimization
+criterion due to Lawson [9] and the quadratic precision nine-parameter discre-
+tized version of the minimum-norm Nielson scheme [10].
+
+Step (2), on the contrary, represents the innovative part of the proposed
+algorithm and gives an interactive tool for controlling the behavior of the
+interpolant surface. In fact it consists of a new method based on a minimization
+criterion for estimating the partial derivative values of the function to be
+reconstructed. Since these values have great influence on the shape of the final
+reconstruction, it is possible to act on the derivative evaluation in order to
+suppress, or at least dampen, the unwanted oscillations of the surface near the
+steep gradients.
+
+Most of the methods known in the literature for numerical evaluation of the
+partial derivatives of a function when only discrete values of it are given have
+been taken into consideration and carefully analyzed [3]. The methods of Akima,
+Little, and Klucewicz are local ones based on a weighted average of the slopes of
+planes through some of the prescribed function values; Lawson’s method solves
+for each given point a local weighted least-square problem for a bidimensional
+quadratic polynomial; on the contrary, Nielson’s method is global and estimates
+
+ACM Transactions on Mathematical Software, Vol. 15, No. 4, December 1989.
+
