@@ -6,16 +6,14 @@ import shutil
 import pandas as pd
 from PIL import Image
 import matplotlib.pyplot as plt
-from pdf2image import convert_from_path
+#from pdf2image import convert_from_path
 
-from pdf2image.exceptions import (
- PDFInfoNotInstalledError,
- PDFPageCountError,
- PDFSyntaxError
-)
+# from pdf2image.exceptions import (PDFInfoNotInstalledError, PDFPageCountError,
+#                                   PDFSyntaxError)
 
 PATHsave = 'reproducibility/acm_full_pdfs/pdfs_to_imgs'
 PATH = 'reproducibility/acm_full_pdfs/pdfs'
+
 
 def get_rcParams(plt):
     plt.rcParams['font.size'] = 12
@@ -27,12 +25,13 @@ def get_rcParams(plt):
     plt.rcParams['hatch.linewidth'] = 0.15
     return plt
 
+
 def convert_pdfs_to_images():
     count = 0
     for root, dirs, files in os.walk(PATH):
-        
+
         for file in tqdm.tqdm(files):
-            count=count+1
+            count = count + 1
             filePATH = os.path.join(root, file)
             try:
                 images = convert_from_path(filePATH)
@@ -43,7 +42,7 @@ def convert_pdfs_to_images():
                 # create the image path to save
                 fname = file + '_' + str(i) + '.png'
                 imagePATH = os.path.join(PATHsave, fname)
-                # Save the image 
+                # Save the image
                 image.save(imagePATH)
 
 
@@ -54,27 +53,34 @@ def get_converted_pdf_stats():
     # split name by id and page number
     imageNames = [name.split('_') for name in imageNames]
     print(imageNames)
-    df = pd.DataFrame(imageNames, columns = ["pdfName", "page"])
-    pages= df.groupby('pdfName').count().values.flatten()
-    return df,pages
+    df = pd.DataFrame(imageNames, columns=["pdfName", "page"])
+    pages = df.groupby('pdfName').count().values.flatten()
+    return df, pages
 
-def plot_hist(pages,plt):
-    nbins=12
+
+def plot_hist(pages, plt):
+    nbins = 8
     plt = get_rcParams(plt)
-    arr = plt.hist(pages,bins=nbins)
+    arr = plt.hist(pages, bins=nbins, color="#31a354")
     plt.xlabel('Count of pages')
     plt.ylabel('Count of scholarly articles')
+
     for i in range(nbins):
-        if int(arr[0][i])!=0:
-            plt.text(arr[1][i],arr[0][i],str(int(arr[0][i])), size=8)
+        if int(arr[0][i]) != 0:
+            plt.text(arr[1][i], arr[0][i], str(int(arr[0][i])), size=8)
+
     fig = plt.gcf()
-    fig.set_size_inches(3,3)
+    fig.set_size_inches(3, 3)
     plt.tight_layout()
-    plt.savefig("figures/data/pageHist.png")
+    plt.savefig("figures/data/pageHist1107.png")
     plt.show()
     return None
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     # convert_pdfs_to_images()
-    df,pages = get_converted_pdf_stats()
-    plot_hist(pages,plt)
+    df, pages = get_converted_pdf_stats()
+    dfLabels = pd.read_csv("data_make/labelData.csv")
+    fileNames = dfLabels["fileName"].values
+    df = df[df["pdfName"].isin(fileNames)]
+    plot_hist(pages, plt)
