@@ -6,6 +6,10 @@ testOCR
 pdfs_to_imgs 
 reproducibility
 test1.pdfs_to_imgssquare.png
+ocr
+
+# Remove this and commit the clustering clustering folder from lab computer 
+clustering
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
